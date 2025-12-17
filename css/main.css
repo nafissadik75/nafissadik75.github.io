@@ -1,0 +1,40 @@
+body {
+  background: #0f1724;
+  color: #e6eef8;
+  font-family: system-ui, sans-serif;
+  line-height: 1.6;
+}
+
+.container {
+  max-width: 960px;
+  margin: auto;
+  padding: 24px;
+}
+
+.site-header {
+  display: flex;
+  justify-content: space-between;
+  padding: 16px 24px;
+}
+
+nav a {
+  margin-left: 16px;
+  color: #9fb0d6;
+  text-decoration: none;
+}
+
+.hero {
+  margin-top: 40px;
+}
+
+#project-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(260px, 1fr));
+  gap: 16px;
+}
+
+.card {
+  background: #0b1220;
+  padding: 16px;
+  border-radius: 12px;
+}
