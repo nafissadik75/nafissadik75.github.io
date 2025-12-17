@@ -1,40 +1,106 @@
+/* ---------- CSS VARIABLES ---------- */
+:root {
+  --bg: #0f1724;
+  --bg-card: #0b1220;
+  --text: #e6eef8;
+  --muted: #9fb0d6;
+  --accent: #5c8cff;
+
+  --radius: 12px;
+  --max-width: 960px;
+}
+
+/* ---------- RESET-ish ---------- */
+* {
+  box-sizing: border-box;
+}
+
+html, body {
+  margin: 0;
+  padding: 0;
+}
+
+/* ---------- BASE ---------- */
 body {
-  background: #0f1724;
-  color: #e6eef8;
-  font-family: system-ui, sans-serif;
+  background: var(--bg);
+  color: var(--text);
+  font-family: system-ui, -apple-system, BlinkMacSystemFont, sans-serif;
   line-height: 1.6;
 }
 
+/* ---------- LAYOUT ---------- */
 .container {
-  max-width: 960px;
-  margin: auto;
+  max-width: var(--max-width);
+  margin: 0 auto;
   padding: 24px;
 }
 
-.site-header {
+header {
   display: flex;
   justify-content: space-between;
-  padding: 16px 24px;
+  align-items: center;
+  padding: 20px 24px;
+  border-bottom: 1px solid rgba(255,255,255,0.05);
 }
 
 nav a {
+  color: var(--muted);
   margin-left: 16px;
-  color: #9fb0d6;
   text-decoration: none;
 }
 
-.hero {
-  margin-top: 40px;
+nav a:hover {
+  color: var(--text);
 }
 
-#project-grid {
+/* ---------- HERO ---------- */
+.hero {
+  margin-top: 48px;
+}
+
+.hero h2 {
+  font-size: 1.8rem;
+  margin-bottom: 8px;
+}
+
+/* ---------- CARDS / GRID ---------- */
+.grid {
   display: grid;
   grid-template-columns: repeat(auto-fit, minmax(260px, 1fr));
   gap: 16px;
+  margin-top: 24px;
 }
 
 .card {
-  background: #0b1220;
+  background: var(--bg-card);
   padding: 16px;
-  border-radius: 12px;
+  border-radius: var(--radius);
+}
+
+/* ---------- LINKS ---------- */
+a {
+  color: var(--accent);
+}
+
+a:hover {
+  text-decoration: underline;
+}
+
+/* ---------- FOOTER ---------- */
+footer {
+  padding: 32px 24px;
+  color: var(--muted);
+  font-size: 0.9rem;
+}
+
+/* ---------- MOBILE ---------- */
+@media (max-width: 600px) {
+  header {
+    flex-direction: column;
+    align-items: flex-start;
+  }
+
+  nav {
+    margin-top: 12px;
+  }
 }
